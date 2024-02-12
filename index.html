@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+  
+      .item {
+        width: calc(33.333% - 20px);
+        margin-bottom: 20px;
+        background-color: #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+  
+      @media (max-width: 768px) {
+        .item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/valentines-day-icegif-31.gif" type="image/gif">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="img/valentines-day-icegif-31.gif" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body> 
+    <div id="card">
+      <center><h1>Selamat Hari Valentine paniii❤️ </h1></center>
+      <div class="heart" id="heart1">
+        <div id="half1">
+          <div id="circle"></div>
+          <div id="rec"></div>
+        </div>
+        <div id="half2">
+          <div id="circle"></div>
+          <div id="rec"></div>
+        </div>
+      </div>
+      <div id="message">
+        <h2>maaf gak bisa ngasih coklat 😅😹😹</h2>
+      </div>
+      <div class="heart" id="heart2">
+        <div id="half1">
+          <div id="circle"></div>
+          <div id="rec"></div>
+        </div>
+        <div id="half2">
+          <div id="circle"></div>
+          <div id="rec"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .sembunyi {
+      display: none;
+    }
+    #play-btn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    #play-btn:after {
+      content: '►';
+    }
+    #play-btn.playing:after {
+      content: '❚❚';
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var audioElement = document.getElementById('linkmp3');
+  
+        audioElement.play();
+    });
+  </script>
+  <body>
+    <audio src="https://b.top4top.io/m_2963ax8hk1.mp3" id="linkmp3" class="sembunyi" loop></audio>
+    <button id="play-btn" class="sembunyi"></button>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const audioElement = document.getElementById('linkmp3');
+        const playBtn = document.getElementById('play-btn');
+  
+        audioElement.addEventListener('loadedmetadata', () => {
+          playBtn.classList.remove('sembunyi');
+          audioElement.play();
+        });
+  
+        playBtn.addEventListener('click', () => {
+          if (audioElement.paused) {
+            audioElement.play();
+            playBtn.classList.add('playing');
+          } else {
+            audioElement.pause();
+            playBtn.classList.remove('playing');
+          }
+        });
+  
+        audioElement.addEventListener('ended', () => {
+          playBtn.classList.remove('playing');
+        });
+  
+        audioElement.addEventListener('play', () => {
+          playBtn.classList.add('playing');
+        });
+  
+        audioElement.addEventListener('pause', () => {
+          playBtn.classList.remove('playing');
+        });
+  
+        document.addEventListener('click', (event) => {
+          if (event.target !== playBtn && audioElement.paused) {
+            audioElement.play();
+            playBtn.classList.add('playing');
+          }
+        });
+      });
+    </script>
+  </body>
+  <style>
+     button {
+    position: fixed;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 0.2s ease-out;
+  }
+  button:hover {
+    transform: translateY(-5px);
+  }
+  #yes-btn {
+    background-color: #008CBA;
+    left: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 88vh;
+    margin: 0;
+  }
+  #no-btn {
+    background-color: #FF5733;
+    left: 60%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 88vh;
+    margin: 0;
+  }
+
+<button id="yes-btn"></button>
+<button id="no-btn"></button>
+    }
+    #no-btn.move {
+      animation: move 1s ease-in-out infinite;
+    }
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+    .message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #000;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button id="yes-btn">Yes</button>
+  <button id="no-btn">No</button>
+  <script>
+    const yesBtn = document.getElementById('yes-btn');
+    const noBtn = document.getElementById('no-btn');
+
+    yesBtn.addEventListener('click', () => {
+      alert('Kabarin aku di WhatsApp yahh jawabannya');
+    });
+
+    noBtn.addEventListener('click', () => {
+      noBtn.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
+      noBtn.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+    });
+  </script>
+</body>
+</html>
